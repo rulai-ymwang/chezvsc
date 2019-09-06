@@ -1,0 +1,58 @@
+{
+  "name": "chezvsc",
+  "displayName": "chezvsc",
+  "version": "0.0.1",
+  "description": "A Visual Studio Code plugin for Chez Scheme",
+  "publisher": "ninjaym",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rulai-ymwang/chezvsc.git"
+  },
+  "author": "ninjaym <ninja.ym@foxmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rulai-ymwang/chezvsc/issues"
+  },
+  "homepage": "https://github.com/rulai-ymwang/chezvsc#readme",
+  "engines": {
+    "vscode": "^1.34.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.formatscheme",
+    "onLanguage:scheme"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "scheme",
+        "extensions": [
+          ".ss",
+          ".scm",
+          ".scheme"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.formatscheme",
+        "title": "Format Scheme"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.4",
+    "@types/vscode": "^1.38.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.2"
+  }
+}
